@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous" />
+    <title>Password generator</title>
+  </head>
+  <body>
+    <div class="container d-flex justify-content-center align-items-center min-vh-100">
+      <div class="d-flex flex-column">
+        <h1>Password Generator</h1>
+        <div class="d-flex flex-column gap-2">
+          <label for="passwordLength" id="passwordLength" class="text-uppercase fw-bold">Panjang password</label>
+          <input class="form-control form-control-lg" id="passwordLength" type="number" />
+          <label for="password" id="password" class="text-uppercase fw-bold">Password</label>
+          <input class="form-control form-control-lg" id="password" type="password" />
+          <button class="btn btn-dark text-uppercase fw-bold btn-lg mt-2" onclick="getPassword()">Generate password</button>
+          <button class="btn btn-primary text-uppercase fw-bold btn-lg mt-2" onclick="savePassword()">Save password</button>
+        </div>
+      </div>
+    </div>
+    <script>
+      let passwordLength = document.getElementById("passwordLength");
+      let password = document.getElementById("password");
+      // let generate = document.getElementById("generatePassword");
+      // let save = document.getElementById("savePassword");
+      function getPassword() {
+        const lowerAlfabet = "abcdefghijklmnopqrstuvwxyz";
+        const upperAlfabet = "ABCDEFGHIJKLMNOPQRSTUVWXZY";
+        const numeric = "0123456789";
+        const symbol = ",.;/<>~|?@#$%^&*()_-=+{}[]:`";
+
+        const data = lowerAlfabet + upperAlfabet + numeric + symbol;
+        let generator = 0;
+          for (let index = 0; index < 10; index++) {
+              generator = data[Math.floor(Math.random() = data.length)]
+          }
+
+          return console.log('generator: ', generator)
+      }
+
+      function savePassword() {}
+    </script>
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+  </body>
+</html>
